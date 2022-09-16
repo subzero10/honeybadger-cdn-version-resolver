@@ -1,0 +1,19 @@
+org: hiteqsoftware
+app: honeybadger-io
+service: cdn-version-resolver
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: us-east-1
+
+functions:
+  latest:
+    handler: handler.latest
+    events:
+      - httpApi:
+          path: /latest
+          method: get
