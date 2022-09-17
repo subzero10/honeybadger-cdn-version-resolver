@@ -6,7 +6,5 @@ jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.version }}
+      - name: Echo received version from payload
+        run: echo ${{ github.event.client_payload.version }}
