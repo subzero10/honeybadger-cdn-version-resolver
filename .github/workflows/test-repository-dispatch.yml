@@ -6,8 +6,5 @@ jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo received payload
-        run: echo ${{ toJson(github.event.client_payload.packages) }}
-
       - name: Echo received payload version
         run: echo ${{ github.event.client_payload.packages[0].name }} - ${{ github.event.client_payload.packages[0].version }}
